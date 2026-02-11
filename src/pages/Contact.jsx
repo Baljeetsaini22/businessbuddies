@@ -35,6 +35,10 @@ function Contact() {
                 +91 90234 97335
               </p>
               <p>
+                📌 <span className="font-semibold">Location:</span>{" "}
+                217, 3rd FLOOR, SOHO, OXFORD STREET
+              </p>
+              <p>
                 📍 <span className="font-semibold">Location:</span>{" "}
                 Zirakpur, Chandigarh, India
               </p>
@@ -98,7 +102,7 @@ function Contact() {
               📍 Business Buddies
             </p>
             <p className="text-slate-600">
-              Zirakpur, Chandigarh – India
+              217, 3rd FLOOR, SOHO, OXFORD STREET <br /> Zirakpur, Chandigarh – India
             </p>
           </div>
 

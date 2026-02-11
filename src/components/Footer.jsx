@@ -1,3 +1,4 @@
+import logo from '/footer.png';
 function Footer() {
   return (
     <footer className="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-800 text-white overflow-hidden">
@@ -6,9 +7,9 @@ function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-12">
         <div>
-          <h2 className="text-2xl font-extrabold mb-4">
-            Business Buddies
-          </h2>
+          <div className="w-30">
+                      <img src={logo} alt="" className="w-full" />
+                    </div>
           <p className="text-indigo-100 text-sm leading-relaxed mb-4">
             Empowering individuals and businesses to learn, earn, and grow
             through smart training, digital solutions, and real opportunities.
@@ -70,7 +71,8 @@ function Footer() {
             Get in Touch
           </h3>
           <ul className="space-y-3 text-indigo-100 text-sm">
-            <li>📍 Zirakpur, Chandigarh, India</li>
+            <li>📍 217, 3rd FLOOR, SOHO, OXFORD STREET</li>
+            <li>📌  Zirakpur, Chandigarh</li>
             <li>📧 info@businessbuddies.online</li>
             <li>📞 +91 90234 97335</li>
           </ul>

@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function HomePage() {
+  const [showAllPremium, setShowAllPremium] = useState(false);
   return (
     <div className="w-full overflow-hidden">
       <section className="relative bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 text-white py-32">
@@ -122,38 +125,110 @@ function HomePage() {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="section-title mb-14 fade-in">Simple Pricing</h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-indigo-50 p-8 rounded-2xl shadow zoom-in">
-              <h3 className="text-2xl font-semibold mb-3 text-indigo-700">
-                Free Plan
-              </h3>
-              <p className="text-4xl font-bold mb-6 text-indigo-600">₹0</p>
+          <div className="grid md:grid-cols-3 gap-10 items-stretch">
+            <div className="bg-indigo-50 p-8 rounded-2xl shadow zoom-in flex flex-col h-full min-h-[520px]">
+              <div>
+                <h3 className="text-2xl font-semibold mb-3 text-indigo-700">
+                  Free Plan
+                </h3>
+                <p className="text-4xl font-bold mb-6 text-indigo-600">₹0</p>
 
-              <ul className="text-slate-600 space-y-3 mb-8">
-                <li>✔ Free courses</li>
-                <li>✔ Business resources</li>
-                <li>✔ Community support</li>
-              </ul>
+                <ul className="text-slate-600 space-y-3">
+                  <li>✔ Free courses</li>
+                  <li>✔ Business resources</li>
+                  <li>✔ Community support</li>
+                </ul>
+              </div>
 
-              <button className="btn-primary">Get Started</button>
+              <button className="btn-primary mt-auto">
+                Get Started
+              </button>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-600 to-violet-600 p-8 rounded-2xl text-white shadow-xl zoom-in">
-              <h3 className="text-2xl font-semibold mb-3">Premium Plan</h3>
-              <p className="text-4xl font-bold mb-1">₹1000</p>
-              <p className="mb-6 text-indigo-100">Per Year</p>
+            <div className="p-8 rounded-2xl shadow zoom-in flex flex-col h-full min-h-[520px]">
+              <div>
+                <h3 className="text-2xl font-semibold mb-3 text-indigo-700">
+                  Standard Plan
+                </h3>
+                <p className="text-4xl font-bold mb-6 text-indigo-600">₹1000</p>
 
-              <ul className="space-y-3 mb-8">
-                <li>✔ All courses</li>
-                <li>✔ Business & IT training</li>
-                <li>✔ Marketing support</li>
-                <li>✔ Priority support</li>
-              </ul>
+                <ul className="text-slate-500 space-y-3">
+                  <li className="font-extrabold">
+                    <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                    Includes Free Plan
+                  </li>
+                  <li className="font-extrabold">
+                    <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                    All courses
+                  </li>
+                  <li className="font-extrabold">
+                    <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                    Business & IT training
+                  </li>
+                  <li className="font-extrabold">
+                    <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                    Marketing support
+                  </li>
+                </ul>
+              </div>
 
-              <button className="btn-primary bg-white text-indigo-700 hover:bg-gray-100">
+              <button className="btn-primary mt-auto">
+                Get Started
+              </button>
+            </div>
+
+
+            <div className="bg-gradient-to-br from-indigo-600 to-violet-600 p-8 rounded-2xl text-white shadow-xl zoom-in flex flex-col h-full min-h-[520px]">
+              <div>
+                <h3 className="text-2xl font-semibold mb-3">Premium Plan</h3>
+                <p className="text-4xl font-bold mb-2">₹5000</p>
+
+                <div
+                  className={`transition-all duration-300 ${showAllPremium ? "max-h-[1000px]" : "max-h-[280px] overflow-hidden"
+                    }`}
+                >
+                  <ul className="space-y-3 pt-4">
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      Includes Free & Standard Plan
+                    </li>
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      1-to-1 Business Mentorship
+                    </li>
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      Advanced IT & Skill-Boost Courses
+                    </li>
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      Personal Business Growth Plan
+                    </li>
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      Resume & Career Guidance
+                    </li>
+                    <li className="font-extrabold">
+                      <i className="fa-solid fa-check text-[#FFD700] text-xl"></i>
+                      Priority WhatsApp & Call Support
+                    </li>
+                  </ul>
+                </div>
+
+                <button
+                  onClick={() => setShowAllPremium(!showAllPremium)}
+                  className="mt-3 text-sm font-semibold underline text-[#FFD700]"
+                >
+                  {showAllPremium ? "View Less" : "View All Benefits"}
+                </button>
+              </div>
+
+              <button className="btn-primary bg-white text-indigo-700 hover:bg-gray-100 w-full mt-auto">
                 Upgrade Now
               </button>
             </div>
+
+
           </div>
         </div>
       </section>
@@ -191,6 +266,9 @@ function HomePage() {
               <p className="text-2xl mb-2">📍</p>
               <p className="font-semibold">Location</p>
               <p className="text-indigo-100">
+                217, 3rd FLOOR, SOHO, OXFORD STREET
+              </p>
+              <p className="text-indigo-100">
                 Zirakpur, Chandigarh, India
               </p>
             </div>
@@ -198,7 +276,8 @@ function HomePage() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:info@businessbuddies.online"
+              // href="mailto:info@businessbuddies.online"
+              href="/contact"
               className="btn-primary bg-white text-indigo-700 hover:bg-gray-100"
             >
               Email Us

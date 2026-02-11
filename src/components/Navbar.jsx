@@ -1,19 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-
+import logo from '/logo.jpeg';
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200">
+    <nav className="sticky top-0 z-50 bg-[#f7f7f7] backdrop-blur-xl border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <NavLink
           to="/"
           className="relative text-lg font-extrabold tracking-wide text-indigo-700"
           onClick={() => setOpen(false)}
         >
-          BUSINESS BUDDIES
-          <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-indigo-600 to-violet-500 rounded-full"></span>
+          <div className="w-30">
+            <img src={logo} alt="" className="w-full" />
+          </div>
+          {/* <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-indigo-600 to-violet-500 rounded-full"></span> */}
         </NavLink>
 
         <ul className="hidden md:flex items-center gap-2 bg-slate-100 p-2 rounded-full">
